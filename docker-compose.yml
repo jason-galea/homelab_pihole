@@ -10,25 +10,21 @@ services:
     image: pihole/pihole  
     environment:
       # ServerIP: 
-      WEBPASSWORD: YourPiholePassword
+      # WEBPASSWORD: YourPiholePassword
       DNS1: 1.1.1.1
       DNS2: 1.0.0.1
-      DNSMASQ_LISTENING: all
+      DNSMASQ_LISTENING: all ### "Permit all origins"
     ports:
-      - "53:53/tcp"
+      - "53:53/tcp" ### Yes, it is actually required to specify tcp & udp
       - "53:53/udp"
-      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      - "80:80/tcp"
+      - "8053:80"
     volumes:
-      - etc-pihole:/etc/pihole/
-      - etc-dnsmasq-d:/etc/dnsmasq.d/
-      # - ./conf/setupVars.conf:/etc/pihole/setupVars.conf
+      # - etc-pihole:/etc/pihole/
+      # - etc-dnsmasq-d:/etc/dnsmasq.d/
       - ./conf/custom.list:/etc/pihole/custom.list
       - ./conf/05-pihole-custom-cname.conf:/etc/dnsmasq.d/05-pihole-custom-cname.conf
-    cap_add:
-      - NET_ADMIN # Only required if you are using Pi-hole as your DHCP server
     restart: unless-stopped
 
-volumes:
-  etc-pihole:
-  etc-dnsmasq-d:
+# volumes:
+#   etc-pihole:
+#   etc-dnsmasq-d:
