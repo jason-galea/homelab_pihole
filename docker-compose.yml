@@ -1,0 +1,31 @@
+### https://docs.pi-hole.net/
+### https://github.com/pi-hole/docker-pi-hole/
+### https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+
+version: "3.8"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      # - 67:67/udp ### DHCP
+      - 80:80/tcp
+    environment:
+      TZ: Australia/Sydney
+      # WEBPASSWORD: 'set a secure password here or it will be random'
+    volumes:
+      - etc-pihole:/etc/pihole/
+      - etc-dnsmasq-d:/etc/dnsmasq.d/
+      - ./conf/setupVars.conf:/etc/pihole/setupVars.conf
+      - ./conf/custom.list:/etc/pihole/custom.list
+      - ./conf/05-pihole-custom-cname.conf:/etc/dnsmasq.d/05-pihole-custom-cname.conf
+    # cap_add:
+    #   - NET_ADMIN ### DHCP
+    restart: unless-stopped
+
+volumes:
+  etc-pihole:
+  etc-dnsmasq-d:
