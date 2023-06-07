@@ -19,12 +19,12 @@ services:
       - "53:53/udp"
       - "8053:80"
     volumes:
-      # - etc-pihole:/etc/pihole/
-      # - etc-dnsmasq-d:/etc/dnsmasq.d/
+      - etc-pihole:/etc/pihole/
+      - etc-dnsmasq-d:/etc/dnsmasq.d/
       - ./conf/custom.list:/etc/pihole/custom.list
       - ./conf/05-pihole-custom-cname.conf:/etc/dnsmasq.d/05-pihole-custom-cname.conf
     restart: unless-stopped
 
-# volumes:
-#   etc-pihole:
-#   etc-dnsmasq-d:
+volumes:
+  etc-pihole:
+  etc-dnsmasq-d:
