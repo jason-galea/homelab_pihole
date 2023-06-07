@@ -3,7 +3,7 @@
 10.1.1.2 prox.galea.lan
 10.1.1.5 printer.galea.lan
 10.1.1.100 samba.galea.lan
-# 10.1.1.101 pihole-old.galea.lan
+10.1.1.101 pihole.galea.lan
 10.1.1.102 bookstack.galea.lan
 10.1.1.103 apache.galea.lan
 10.1.1.104 radarr.galea.lan
@@ -13,7 +13,7 @@
 10.1.1.108 jackett.galea.lan
 10.1.1.109 bazarr.galea.lan
 10.1.1.110 unifi.galea.lan
-10.1.1.111 pihole.galea.lan
+10.1.1.111 pihole-old.galea.lan
 10.1.1.150 csgo.galea.lan
 10.1.1.152 emby.galea.lan
 10.1.1.153 minecraft.galea.lan
