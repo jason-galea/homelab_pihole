@@ -7,9 +7,9 @@ version: "3.8"
 services:
   pihole:
     container_name: homelab_pihole
-    image: pihole/pihole  
+    image: pihole/pihole
     environment:
-      # ServerIP: 
+      # ServerIP: ???
       # WEBPASSWORD: YourPiholePassword
       DNS1: 1.1.1.1
       DNS2: 1.0.0.1
@@ -23,7 +23,7 @@ services:
       - etc-dnsmasq-d:/etc/dnsmasq.d/
       - ./conf/custom.list:/etc/pihole/custom.list
       - ./conf/05-pihole-custom-cname.conf:/etc/dnsmasq.d/05-pihole-custom-cname.conf
-    restart: unless-stopped
+    restart: always
 
 volumes:
   etc-pihole:
