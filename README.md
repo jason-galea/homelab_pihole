@@ -1,2 +1,2 @@
 # homelab_pihole
-Repo containing local Pihole configuration, to be run via Portainer
+Pihole docker-compose file & config
