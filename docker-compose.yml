@@ -13,6 +13,12 @@ services:
       # FTLCONF_webserver_api_password: correct horse battery staple
       FTLCONF_dns_listeningMode: all
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
+      FTLCONF_dns_piholePTR: None
+      DNSMASQ_USER: root
+      # FTLCONF_dns_hosts:
+      #   - 1.1.1.1 asd.asd
+      #   - 2.2.2.2 jahsdas.akhda
+      # FTLCONF_dns_hosts:
       FTLCONF_misc_etc_dnsmasq_d: "true"
       FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.180
     ports:
