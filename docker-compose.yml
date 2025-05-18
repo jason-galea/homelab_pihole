@@ -2,12 +2,10 @@
 ### https://github.com/pi-hole/docker-pi-hole/
 ### https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
 
-version: "3.8"
-
 services:
   pihole:
-    container_name: homelab_pihole
     image: pihole/pihole
+    container_name: pihole
     environment:
       # ServerIP: ???
       # WEBPASSWORD: YourPiholePassword
@@ -15,9 +13,9 @@ services:
       DNS2: 1.0.0.1
       DNSMASQ_LISTENING: all ### "Permit all origins"
     ports:
-      - "53:53/tcp" ### Yes, it is actually required to specify tcp & udp
-      - "53:53/udp"
-      - "8053:80"
+      - 53:53/tcp ### Yes, it is actually required to specify tcp & udp
+      - 53:53/udp
+      - 8053:80
     volumes:
       - etc-pihole:/etc/pihole/
       - etc-dnsmasq-d:/etc/dnsmasq.d/
