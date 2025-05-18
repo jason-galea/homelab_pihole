@@ -1,6 +1,7 @@
 ### https://docs.pi-hole.net/
 ### https://github.com/pi-hole/docker-pi-hole/
 ### https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+### https://www.reddit.com/r/pihole/comments/1iu6iil/local_dns_records_not_working_anymore_after/
 
 services:
   pihole:
@@ -14,11 +15,8 @@ services:
       FTLCONF_dns_listeningMode: all
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
       FTLCONF_dns_piholePTR: None
-      DNSMASQ_USER: root
-      # FTLCONF_dns_hosts:
-      #   - 1.1.1.1 asd.asd
-      #   - 2.2.2.2 jahsdas.akhda
-      # FTLCONF_dns_hosts:
+      # DNSMASQ_USER: root
+      FTLCONF_dns_hosts: 1.1.1.1 asd.asd;2.2.2.2 jahsdas.akhda
       FTLCONF_misc_etc_dnsmasq_d: "true"
       FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.180
     ports:
