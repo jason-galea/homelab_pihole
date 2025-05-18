@@ -24,6 +24,4 @@ services:
       - ./etc-pihole/:/etc/pihole/
       - ./etc-dnsmasq.d/:/etc/dnsmasq.d/
       - ./conf/a_records.conf:/etc/pihole/custom.list
-      # - ./conf/wildcard.conf:/etc/dnsmasq.d/01-wildcard.conf
-      # - ./conf/resolv.conf:/etc/resolv.conf ### nameserver 127.0.0.1
     restart: unless-stopped
