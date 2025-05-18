@@ -11,11 +11,11 @@ services:
       PIHOLE_UID: "1000"
       PIHOLE_GID: "1000"
       TZ: Australia/Melbourne
-      # DNSMASQ_USER: root
       # FTLCONF_webserver_api_password: correct horse battery staple
-      # FTLCONF_dns_piholePTR: None
       FTLCONF_dns_listeningMode: all
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
+      FTLCONF_dns_piholePTR: None ### Troubleshoot local DNS
+      DNSMASQ_USER: root ### Troubleshoot local DNS
       FTLCONF_dns_domain: galea.lan
       FTLCONF_dns_hosts: |
         10.1.1.1 pfsense.galea.lan
