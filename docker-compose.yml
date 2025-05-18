@@ -9,26 +9,21 @@ services:
     environment:
       PIHOLE_UID: "1000"
       PIHOLE_GID: "1000"
-      DNS1: 1.1.1.1
-      DNS2: 1.0.0.1
-      DNSMASQ_LISTENING: all ### "Permit all origins"
       TZ: Australia/Melbourne
       # FTLCONF_webserver_api_password: correct horse battery staple
       FTLCONF_dns_listeningMode: all
+      FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
       FTLCONF_misc_etc_dnsmasq_d: "true"
+      FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.180
     ports:
       - 53:53/tcp ### Yes, it is actually required to specify tcp & udp
       - 53:53/udp
       - 8053:80/tcp
-      # - 80443:443/tcp
+      # - 8054:443/tcp
     volumes:
       - ./etc-pihole/:/etc/pihole/
       - ./etc-dnsmasq.d/:/etc/dnsmasq.d/
       - ./conf/a_records.conf:/etc/pihole/custom.list
-      - ./conf/wildcard.conf:/etc/dnsmasq.d/01-wildcard.conf
-      - ./conf/resolv.conf:/etc/resolv.conf ### nameserver 127.0.0.1
+      # - ./conf/wildcard.conf:/etc/dnsmasq.d/01-wildcard.conf
+      # - ./conf/resolv.conf:/etc/resolv.conf ### nameserver 127.0.0.1
     restart: unless-stopped
-
-# volumes:
-#   etc-pihole:
-#   etc-dnsmasq-d:
