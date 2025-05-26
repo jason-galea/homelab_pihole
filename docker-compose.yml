@@ -30,8 +30,6 @@ services:
         10.1.1.153 minecraft.galea.lan
         10.1.1.154 tmf.galea.lan
         10.1.1.155 wekan.galea.lan
-        10.1.1.160 scraper.galea.lan
-        10.1.1.180 nginx.galea.lan
         10.1.1.181 jenkins.galea.lan
         10.1.1.210 docker.galea.lan
       # 10.1.1.104 radarr.galea.lan
@@ -41,8 +39,11 @@ services:
       # 10.1.1.108 jackett.galea.lan
       # 10.1.1.109 bazarr.galea.lan
       # 10.1.1.114 jellyfin.galea.lan
+      # 10.1.1.160 scraper.galea.lan
+      # 10.1.1.180 nginx.galea.lan
       FTLCONF_misc_etc_dnsmasq_d: "true"
-      FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.180
+      # FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.180
+      FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.210
     ports:
       - 53:53/tcp ### Yes, it is actually required to specify tcp & udp
       - 53:53/udp
