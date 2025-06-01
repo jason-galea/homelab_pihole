@@ -21,7 +21,6 @@ services:
         10.1.1.1 pfsense.galea.lan
         10.1.1.2 prox.galea.lan
         10.1.1.5 printer.galea.lan
-        10.1.1.102 bookstack.galea.lan
         10.1.1.110 unifi.galea.lan
         10.1.1.130 torrents.galea.lan
         10.1.1.150 csgo.galea.lan
@@ -31,6 +30,7 @@ services:
         10.1.1.155 wekan.galea.lan
         10.1.1.181 jenkins.galea.lan
         10.1.1.210 docker.galea.lan
+      # 10.1.1.102 bookstack.galea.lan
       # 10.1.1.101 pihole-old.galea.lan
       # 10.1.1.104 radarr.galea.lan
       # 10.1.1.105 sonarr.galea.lan
