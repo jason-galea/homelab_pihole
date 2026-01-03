@@ -23,6 +23,7 @@ services:
         10.1.1.5 printer.galea.lan
         10.1.1.110 unifi.galea.lan
         10.1.1.130 torrents.galea.lan
+        10.1.1.131 immich.galea.lan
         10.1.1.150 csgo.galea.lan
         10.1.1.152 emby.galea.lan
         10.1.1.153 minecraft.galea.lan
