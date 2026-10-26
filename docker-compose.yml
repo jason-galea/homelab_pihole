@@ -44,7 +44,8 @@ services:
       # 10.1.1.180 nginx.galea.lan
       FTLCONF_misc_etc_dnsmasq_d: "true"
       # FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.180
-      FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.210
+      # FTLCONF_misc_dnsmasq_lines: address=/greyman.space/10.1.1.210
+      FTLCONF_misc_dnsmasq_lines: address=/unknown.earth/10.1.1.210
     ports:
       - 53:53/tcp ### Yes, it is actually required to specify tcp & udp
       - 53:53/udp
